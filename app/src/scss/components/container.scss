@@ -88,6 +88,7 @@ padding: $paddingSize*2 $paddingSize*2 $paddingSize*2 $paddingSize*2;
     display: flex;
     flex-direction: column;
   }
+  .panel-body::-webkit-scrollbar {display: none}
   .table-container{
     flex:1;
     padding-left: 12px;

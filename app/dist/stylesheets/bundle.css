@@ -4808,6 +4808,10 @@ body {
       flex-direction: column;
 }
 
+.dashboard-panel .panel-body::-webkit-scrollbar {
+  display: none;
+}
+
 .dashboard-panel .table-container {
   -ms-flex: 1;
       flex: 1;
