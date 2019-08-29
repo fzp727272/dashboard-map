@@ -282,29 +282,29 @@ $(function() {
 $(function() {
   //假数据 - 当月
   var data = [
-    { name: '三生花金盏花舒润 嫩肤面膜', value: 709488, rank: 1 },
-    { name: '三生花山茶花清滢 保湿面膜', value: 665280, rank: 2 },
-    { name: '百雀羚IFSCC 杰伦塑料袋', value: 464280, rank: 3 },
-    { name: '三生花雪莲花晶采 亮肤面膜', value: 394848, rank: 4 },
-    { name: '三生花金盏花舒润 嫩肤面膜', value: 709488, rank: 5 },
-    { name: '三生花山茶花清滢 保湿面膜', value: 665280, rank: 6 },
-    { name: '百雀羚IFSCC 杰伦塑料袋', value: 464280, rank: 7 },
-    { name: '三生花雪莲花晶采 亮肤面膜', value: 394848, rank: 8 },
-    { name: '百雀羚IFSCC 杰伦塑料袋', value: 464280, rank: 9 },
-    { name: '三生花雪莲花晶采 亮肤面膜', value: 394848, rank: 10 },
+    { name: '三生花金盏...', value: 709488, rank: 1 },
+    { name: '三生花山茶...', value: 665280, rank: 2 },
+    { name: '百雀羚IFSC...', value: 464280, rank: 3 },
+    { name: '三生花雪莲...', value: 394848, rank: 4 },
+    { name: '三生花金盏...', value: 709488, rank: 5 },
+    { name: '三生花山茶...', value: 665280, rank: 6 },
+    { name: '百雀羚IFS...', value: 464280, rank: 7 },
+    { name: '三生花雪莲...', value: 394848, rank: 8 },
+    { name: '百雀羚IFS...', value: 464280, rank: 9 },
+    { name: '三生花雪莲...', value: 394848, rank: 10 },
   ];
   //假数据 - 当年
   var data1 = [
-    { name: '三生花金盏1肤面膜', value: 122438, rank: 1 },
-    { name: '三生花山茶花3保湿面膜', value: 5280, rank: 2 },
-    { name: '百雀羚IFSCC 杰伦塑料袋', value: 412380, rank: 3 },
-    { name: '三生花雪莲花1面膜', value: 3914848, rank: 4 },
-    { name: '三生花金盏花舒润 嫩肤面膜', value: 712388, rank: 5 },
-    { name: '三生花山茶花清滢 保湿面膜', value: 35280, rank: 6 },
-    { name: '百雀羚IFSCC 杰伦塑料袋', value: 123280, rank: 7 },
-    { name: '三生花雪3 亮肤面膜', value: 3123848, rank: 8 },
-    { name: '百雀羚IFSCC 杰伦塑料袋', value: 423280, rank: 9 },
-    { name: '三生花雪莲 面膜', value: 313848, rank: 10 },
+    { name: '三生花金盏...', value: 12488, rank: 1 },
+    { name: '三生花山茶...', value: 621280, rank: 2 },
+    { name: '百雀羚IFSC...', value: 214280, rank: 3 },
+    { name: '三生花雪莲...', value: 394848, rank: 4 },
+    { name: '三生花金盏...', value: 567488, rank: 5 },
+    { name: '三生花山茶...', value: 123280, rank: 6 },
+    { name: '百雀羚IFS...', value: 531280, rank: 7 },
+    { name: '三生花雪莲...', value: 394848, rank: 8 },
+    { name: '百雀羚IFS...', value: 464280, rank: 9 },
+    { name: '三生花雪莲...', value: 394848, rank: 10 },
   ];
 
   //当月数据显示
