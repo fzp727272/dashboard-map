@@ -110,8 +110,8 @@ $(function() {
       [{name: '上海'}, {name: '辽宁', value: 70,rank:1}],
       [{name: '上海'}, {name: '江苏', value: 90,rank:1}],
       [{name: '上海'}, {name: '河北', value: 20,rank:1}],
-      [{name: '上海'}, {name: '福建', value: 80,rank:1}],
-      [{name: '上海'}, {name: '广东', value: 80,rank:1}],
+      [{name: '上海'}, {name: '福建', value: 20,rank:1}],
+      [{name: '上海'}, {name: '广东', value: 50,rank:1}],
       [{name: '上海'}, {name: '浙江', value: 80,rank:1}]
   ];
 
