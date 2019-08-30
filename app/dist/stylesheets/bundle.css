@@ -5128,6 +5128,11 @@ body {
       align-items: center;
 }
 
+#warehouse-statistics .statistics-container .statistics-list .unit {
+  font-size: 12px;
+  margin-left: 4px;
+}
+
 #warehouse-statistics .statistics-container .statistics-list .tag {
   width: 16px;
   height: 16px;
@@ -5143,7 +5148,7 @@ body {
 
 #warehouse-statistics .statistics-container .statistics-list .statistics-text-container .statistics-value {
   color: #fff;
-  font-size: 24px;
+  font-size: 18px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;

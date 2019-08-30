@@ -22,37 +22,40 @@ for (var i = 0; i < 12; i++) {
 }
 
 
-//屏幕宽度缩放
-var screenWidth = $(window).width();
-var screenHeight = $(window).height();
-if (screenWidth > 1920) {
-  $('html').css({
-    display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'center',
-  });
-  $('body').width(1920);
-  $('body').height((1920 * screenHeight) / screenWidth);
-  var scaleSize = 'scale(' + screenWidth / 1920 + ')';
-  $('body').css({ transform: scaleSize });
-}
+// //屏幕宽度缩放
+// var screenWidth = $(window).width();
+// var screenHeight = $(window).height();
+// if (screenWidth > 1920) {
+//   $('html').css({
+//     display: 'flex',
+//     'align-items': 'center',
+//     'justify-content': 'center',
+//   });
+//   $('body').width(1920);
+//   $('body').height((1920 * screenHeight) / screenWidth);
+//   var scaleSize = 'scale(' + screenWidth / 1920 + ')';
+//   $('body').css({ transform: scaleSize });
+// }
 
 //仓库统计数据
 $(function(){
+  function warehouseStatistics(data){
+    var $ele = $("#warehouse-statistics").find('.statistics-list');
+    data.map(function(item,key){
+    if(item.state == 'warning'){
+      $ele.eq(key).addClass('statistics-list-warning');
+    }
+    $ele.eq(key).find('.statistics-value').children('span').eq(0).html(item.value)
+    $ele.eq(key).find('.statistics-label').html(item.name)
+    })
+  }
   var data = [
-    {name:'当前库存',state:'normal',value:'190,908'},
-    {name:'当前库存',state:'warning',value:'190,908'},
-    {name:'当前库存',state:'warning',value:'180,908'},
-    {name:'当前库存',state:'normal',value:'1890,908'},
+    {name:'当前库存',state:'normal',value:'190,908',unit:'件'},
+    {name:'当前库存',state:'warning',value:'190,908',unit:'件'},
+    {name:'当前库存',state:'warning',value:'180,908',unit:'件'},
+    {name:'当前库存',state:'normal',value:'1890,908',unit:'件'},
   ]
-var $ele = $("#warehouse-statistics").find('.statistics-list');
-data.map(function(item,key){
-if(item.state == 'warning'){
-  $ele.eq(key).addClass('statistics-list-warning');
-}
-$ele.eq(key).find('.statistics-value').children('span').html(item.value)
-$ele.eq(key).find('.statistics-label').html(item.name)
-})
+  warehouseStatistics(data);
 });
 
 
@@ -75,7 +78,7 @@ $(function() {
         size: $('.dashboard-progress').width() - 30,
         lineCap: 'round',
         fill: { color: '#2F59FF' },
-        thickness: ($('.dashboard-progress').width() - 60) / 20,
+        thickness: ($('.dashboard-progress').width()) / 20,
       });
       var value = item.ratio * 1000 / 10;
       ele.find(".progress-ration").html(value+'%');
@@ -97,17 +100,21 @@ $(function(){
 //地图
 $(function() {
   var mapData = [
-    { name: '天津', value: Math.round(Math.random() * 100000), rank: 1 },
-    { name: '上海', value: Math.round(Math.random() * 100000), rank: 2 },
-    { name: '重庆', value: Math.round(Math.random() * 100000), rank: 3 },
-    { name: '河北', value: Math.round(Math.random() * 100000), rank: 4 },
-    { name: '河南', value: Math.round(Math.random() * 100000), rank: 5 },
-    { name: '云南', value: Math.round(Math.random() * 100000), rank: 6 },
-    { name: '辽宁', value: Math.round(Math.random() * 100000), rank: 7 },
-    { name: '黑龙江', value: Math.round(Math.random() * 100000), rank: 8 },
-    { name: '湖南', value: Math.round(Math.random() * 100000), rank: 9 },
-    { name: '安徽', value: Math.round(Math.random() * 100000), rank: 10 },
+      [{name: '上海'}, {name: '新疆', value: 20,rank:1}],
+      [{name: '上海'}, {name: '甘肃', value: 10,rank:1}],
+      [{name: '上海'}, {name: '北京', value: 10,rank:1}],
+      [{name: '上海'}, {name: '广西', value: 70,rank:1}],
+      [{name: '上海'}, {name: '青海', value: 19,rank:1}],
+      // [{name: '上海'}, {name: '江西', value: 90,rank:1}],
+      [{name: '上海'}, {name: '内蒙古', value: 40,rank:1}],
+      [{name: '上海'}, {name: '辽宁', value: 70,rank:1}],
+      [{name: '上海'}, {name: '江苏', value: 90,rank:1}],
+      [{name: '上海'}, {name: '河北', value: 20,rank:1}],
+      [{name: '上海'}, {name: '福建', value: 80,rank:1}],
+      [{name: '上海'}, {name: '广东', value: 80,rank:1}],
+      [{name: '上海'}, {name: '浙江', value: 80,rank:1}]
   ];
+
 
   chinaMap.init($('#map-container'), mapData);
 });
@@ -217,7 +224,7 @@ $(function() {
 //出入库统计
 $(function() {
   //
-  var delayTime = 5000;
+  var delayTime = 10000;
 
   function yearData() {
     //近一年数据
@@ -256,7 +263,6 @@ $(function() {
   next();
 
   //按钮点击切换逻辑
-
   $('.statistics-chart')
     .find('.panel-header-button')
     .on('click', function() {
@@ -295,16 +301,16 @@ $(function() {
   ];
   //假数据 - 当年
   var data1 = [
-    { name: '三生花金盏...', value: 12488, rank: 1 },
-    { name: '三生花山茶...', value: 621280, rank: 2 },
-    { name: '百雀羚IFSC...', value: 214280, rank: 3 },
-    { name: '三生花雪莲...', value: 394848, rank: 4 },
-    { name: '三生花金盏...', value: 567488, rank: 5 },
-    { name: '三生花山茶...', value: 123280, rank: 6 },
-    { name: '百雀羚IFS...', value: 531280, rank: 7 },
-    { name: '三生花雪莲...', value: 394848, rank: 8 },
-    { name: '百雀羚IFS...', value: 464280, rank: 9 },
-    { name: '三生花雪莲...', value: 394848, rank: 10 },
+    { name: '三生花金盏123123123', value: 12488, rank: 1 },
+    { name: '三生花山茶123123123', value: 621280, rank: 2 },
+    { name: '百雀羚IFSC123123123', value: 214280, rank: 3 },
+    { name: '三生花雪莲123123123', value: 394848, rank: 4 },
+    { name: '三生花金盏123123123', value: 567488, rank: 5 },
+    { name: '三生花山茶123123123', value: 123280, rank: 6 },
+    { name: '百雀羚IFS123123123', value: 531280, rank: 7 },
+    { name: '三生花雪莲123123123', value: 394848, rank: 8 },
+    { name: '百雀羚IFS123123123', value: 464280, rank: 9 },
+    { name: '三生花雪莲123123123', value: 394848, rank: 10 },
   ];
 
   //当月数据显示

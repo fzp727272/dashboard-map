@@ -2,176 +2,6 @@ var $ = require('jquery');
 
 module.exports = {
   init: function(ele, data) {
-    //   var data = [
-    //     { name: '北京', value: Math.round(Math.random() * 100000),
-    //     markPoint:{symbol:'circle',symbolSize:100}, },
-    //     { name: '天津', value: Math.round(Math.random() * 100000) },
-    //     { name: '上海', value: Math.round(Math.random() * 100000) },
-    //     { name: '重庆', value: Math.round(Math.random() * 100000) },
-    //     { name: '河北', value: Math.round(Math.random() * 100000) },
-    //     { name: '河南', value: Math.round(Math.random() * 100000) },
-    //     { name: '云南', value: Math.round(Math.random() * 100000) },
-    //     { name: '辽宁', value: Math.round(Math.random() * 100000) },
-    //     { name: '黑龙江', value: Math.round(Math.random() * 100000) },
-    //     { name: '湖南', value: Math.round(Math.random() * 100000) },
-    //     { name: '安徽', value: Math.round(Math.random() * 100000) },
-    //     { name: '山东', value: Math.round(Math.random() * 100000) },
-    //     { name: '新疆', value: Math.round(Math.random() * 100000) },
-    //     { name: '江苏', value: Math.round(Math.random() * 100000) },
-    //     { name: '浙江', value: Math.round(Math.random() * 100000) },
-    //     { name: '江西', value: Math.round(Math.random() * 100000) },
-    //     { name: '湖北', value: Math.round(Math.random() * 100000) },
-    //     { name: '广西', value: Math.round(Math.random() * 100000) },
-    //     { name: '甘肃', value: Math.round(Math.random() * 100000) },
-    //     { name: '山西', value: Math.round(Math.random() * 100000) },
-    //     { name: '内蒙古', value: Math.round(Math.random() * 100000) },
-    //     { name: '陕西', value: Math.round(Math.random() * 100000) },
-    //     { name: '吉林', value: Math.round(Math.random() * 100000) },
-    //     { name: '福建', value: Math.round(Math.random() * 100000) },
-    //     { name: '贵州', value: Math.round(Math.random() * 100000) },
-    //     { name: '广东', value: Math.round(Math.random() * 100000) },
-    //     { name: '青海', value: Math.round(Math.random() * 100000) },
-    //     { name: '西藏', value: Math.round(Math.random() * 100000) },
-    //     { name: '四川', value: Math.round(Math.random() * 100000) },
-    //     { name: '宁夏', value: Math.round(Math.random() * 100000) },
-    //     { name: '海南', value: Math.round(Math.random() * 100000) },
-    //     { name: '台湾', value: Math.round(Math.random() * 100000) },
-    //     { name: '香港', value: Math.round(Math.random() * 100000) },
-    //     { name: '澳门', value: Math.round(Math.random() * 100000) },
-    //   ];
-    // option11 = {
-    //   // title : {
-    //   //     text: 'iphone销量',
-    //   //     subtext: '纯属虚构',
-    //   //     left: 'center'
-    //   // },
-    //   // tooltip : {
-    //   //     trigger: 'item'
-    //   // },
-    //   // legend: {
-    //   //     orient: 'vertical',
-    //   //     left: 'left',
-    //   //     data:['iphone3','iphone4','iphone5']
-    //   // },
-
-    //   tooltip: {
-    //     show: true,
-    //     padding: [10, 5, 10, 5],
-    //   },
-    //   geo: {
-    //     show: true,
-    //     map: 'china',
-    //     zoom: 1.2,
-    //     label: {
-    //       normal: {
-    //         show: false,
-    //       },
-    //       emphasis: {
-    //         show: false,
-    //       },
-    //     },
-    //     // roam: false,//地图设置不可拖拽，固定的
-    //     itemStyle: {
-    //       normal: {
-    //         areaColor: '#090919',
-    //         borderWidth: 2,
-    //         borderColor: 'rgba(47,89,255,1)',
-    //         label: { show: true },
-
-    //         // shadowColor: '#2F59FF',
-    //         // shadowBlur: 10
-    //       },
-    //       emphasis: {
-    //         label: { show: true },
-    //       },
-    //     },
-    //   },
-    //   grid: {
-    //     top: -30,
-    //     right: -100,
-    //     bottom: 0,
-    //     left: 0,
-    //   },
-
-    //   visualMap: {
-    //     show: false,
-    //     min: 0,
-    //     max: 2500,
-    //     left: 0,
-    //     right: 0,
-    //     top: -100,
-    //     bottom: 0,
-    //     text: ['高', '低'],
-    //     inRange: {
-    //       color: ['rgba(47,89,255,0.1)', 'rgba(47,89,255,0)'],
-    //     },
-    //     // 文本，默认为数值文本
-    //     calculable: true,
-    //   },
-
-    //   series: [
-    //     {
-
-    //       name: '出货量',
-    //       type: 'map',
-    //       mapType: 'china',
-    //       showAllSymbol: true,
-    //       symbolSize: 20,
-    //       zoom: 1.2,
-    //       itemStyle: {
-    //         normal: {
-    //           label: {
-    //             formatter: '{b}\n{c}',
-    //             show: true,
-    //             color: '#fff',
-    //           },
-    //           borderColor: 'rgba(47,89,255,.1)',
-    //           areaColor: 'rgba(47,89,255,1)',
-    //           borderWidth: 2,
-    //         },
-
-    //         emphasis: { label: { show: true, color: '#fff' }, areaColor: 'rgba(47,89,255,0.3)' },
-    //       },
-    //     //   renderItem: function (params, api) {//具体实现自定义图标的方法
-    //     //     return {
-    //     //         type: 'image',
-    //     //         style: {
-    //     //             image: "./images/map-icon.png",
-    //     //             x: api.coord([
-    //     //                 coldCar[params.dataIndex].value[0], coldCar[params.dataIndex]
-    //     //                     .value[1]
-    //     //             ])[0],
-    //     //             y: api.coord([
-    //     //                 coldCar[params.dataIndex].value[0], coldCar[params.dataIndex]
-    //     //                     .value[1]
-    //     //             ])[1]
-    //     //         }
-    //     //     }
-    //     // },
-    //       // label: {
-    //       //     normal: {
-    //       //         show: true,
-    //       //         color:'#fff'
-    //       //     },
-    //       //     emphasis: {
-    //       //         show: true,
-    //       //         areaColor: 'red',
-    //       //     }
-    //       // },
-    //       //   itemStyle: {
-    //       //     normal: {
-    //       //         areaColor: 'rgba(0,0,0,0)',
-    //       //         borderWidth: 1,
-    //       //         borderColor:"#2F59FF",
-    //       //         // shadowColor: 'rgba(0,54,255, 1)',
-    //       //         // shadowBlur: 100
-    //       //     }
-    //       // },
-    //       data: data,
-    //     },
-
-    //   ],
-    // };
     var geoCoordMap = {
       上海: [121.4648, 31.2891],
       新疆: [87.9236, 43.5883],
@@ -207,23 +37,35 @@ module.exports = {
       湖南: [113.0823, 28.2568],
     };
     var mapData = data;
+    var rangeData = mapData.map(function(dataItem ) {
+
+
+      return {
+        name: dataItem[1].name,
+        value:dataItem[1].value,
+      };
+    });
 
     var convertData = function(data) {
       var res = [];
       for (var i = 0; i < data.length; i++) {
-        var geoCoord = geoCoordMap[data[i].name];
-        if (geoCoord) {
-          res.push({
-            name: data[i].name,
-            value: geoCoord.concat(data[i].value),
-            rank: data[i].rank,
-          });
+        var dataItem = data[i];
+        var fromCoord = geoCoordMap[dataItem[0].name];
+        var toCoord = geoCoordMap[dataItem[1].name];
+        if (fromCoord && toCoord) {
+          res.push([
+            {
+              coord: fromCoord,
+            },
+            {
+              coord: toCoord,
+            },
+          ]);
         }
       }
-      //   console.log(res);
       return res;
     };
-
+    console.log(convertData(mapData))
     option = {
       //  backgroundColor: '#404a59',
       //  title: {
@@ -241,8 +83,9 @@ module.exports = {
       //          return params.name + ' : ' + params.value[2];
       //      }
       //  },
+      // backgroundColor:'red',
       legend: {
-          show:false,
+        show: false,
         orient: 'vertical',
         y: 'bottom',
         x: 'right',
@@ -262,12 +105,13 @@ module.exports = {
         padding: [10, 5, 10, 5],
       },
       visualMap: {
-        min: 0,
-        max: 10000,
+        // type:'piecewise',
+        dimension:0,
         show: false,
-        calculable: true,
+        min:0,
+        max:100,
         inRange: {
-          color: ['#FF006D'],
+          color: ['#090919','#0074FF']
         },
         textStyle: {
           color: '#fff',
@@ -275,9 +119,10 @@ module.exports = {
       },
       geo: {
         map: 'china',
+     
         zoom: 1.2,
         label: {
-          formatter: '{b}\n{c}',
+          // formatter: '{b}\n{c}',
           normal: {
             color: '#fff',
             show: false,
@@ -287,57 +132,48 @@ module.exports = {
             show: false,
           },
         },
+
         itemStyle: {
           normal: {
-            areaColor: '#090919',
-            borderWidth: 2,
+            areaColor:'#090919',
+            // areaColor: function(params){console.log(params)},
+            borderWidth: 4,
             borderColor: 'rgba(47,89,255,1)',
           },
           emphasis: {
             show: false,
-            areaColor: 'rgba(47,89,255,1)',
+            // areaColor: 'rgba(47,89,255,1)',
           },
         },
       },
       series: [
         {
           name: '出货量（件）',
-          type: 'scatter',
-          coordinateSystem: 'geo',
+          type: 'map',
+          zlevel:1,
+          mapType: 'china',
+          // coordinateSystem: 'geo',
           zoom: 1.2,
+  
           //   symbol: 'pin',
-          symbol: 'image://./images/map-icon.png',
-          data: convertData(mapData),
-          symbolSize: function(params) {
-            //   var ratio = 50000 / 24;
-            var size = 20 + (params[2] - 5000) / 5000;
-            return size;
-          },
-          tooltip: {
-            formatter: function(params) {
-              // console.log(params)
-              var res =
-                '<div>' +
-                '<div style="font-size:14px;"><div style="text-align:center;display:block;width:16px;height:16px;line-height:16px;border-radius:10px;background:#FF006D;margin-right:4px;">' +
-                params.data.rank +
-                '</div>' +
-                params.name +
-                '</div>' +
-                '出货量：' +
-                params.value[2] +
-                '</div>';
-              return res;
-            },
-          },
+          // symbol: 'image://./images/map-icon.png',
+      
+          // symbolSize: function(params) {
+          //   //   var ratio = 50000 / 24;
+          //   var size = 20 + (params[2] - 5000) / 5000;
+          //   return size;
+          // },
+
           itemStyle: {
             normal: {
-              borderColor: 'rgba(47,89,255,.1)',
-              areaColor: 'rgba(47,89,255,1)',
+              borderColor: 'rgba(47,89,255,.2)',
+              areaColor: '#090919',
               borderWidth: 2,
             },
             emphasis: {
               show: false,
-              borderColor: '#fff',
+              // borderColor: '#fff',
+              areaColor: 'rgba(47,89,255,1)',
               borderWidth: 1,
             },
           },
@@ -349,22 +185,131 @@ module.exports = {
 
               formatter: function(params) {
                 // console.log(params)
-                let res = params.name + '\n' + params.value[2];
+                let res = params.name;
                 return res;
               },
               show: true,
             },
             emphasis: {
               show: false,
+              color: '#fff',
             },
           },
+          data: rangeData,
+        },
+
+        // {
+        //   name: '出货量（件）',
+        //   type: 'map',
+        //   zlevel:2,
+        //   mapType: 'china',
+        //   coordinateSystem: 'geo',
+        //   zoom: 1.2,
+        //   // symbolSize:100,
+        //   //   symbol: 'rec',
+        //   // symbol: 'image://./images/map-icon.png',
+        //   data: rangeData,
+        //   // symbolSize: function(params) {
+        //   //   //   var ratio = 50000 / 24;
+        //   //   var size = 20 + (params[2] - 5000) / 5000;
+        //   //   return size;
+        //   // },
+
+        //   itemStyle: {
+        //     normal: {
+        //       borderColor: 'rgba(47,89,255,.2)',
+        //       areaColor: 'rgba(47,89,255)',
+        //       borderWidth: 2,
+        //     },
+        //     emphasis: {
+        //       show: false,
+        //       borderColor: '#fff',
+        //       areaColor: 'rgba(47,89,255)',
+        //       borderWidth: 1,
+        //     },
+        //   },
+        //   label: {
+        //     normal: {
+        //       color: '#fff',
+        //       fontSize: 10,
+        //       padding: [30, 0, 0, 0],
+        //       show: true,
+        //     },
+        //     emphasis: {
+        //       show: false,
+        //       color:'#fff'
+        //     },
+        //   },
+        // },
+
+        {
+          name: ' 出货量（件）',
+          type: 'lines',
+          zlevel: 2,
+          // symbol: 'image://./images/map-icon.png',
+          effect: {
+            show: true,
+            period: 3,
+            trailLength: 0.7,
+            color: '#fff',
+            symbolSize: 3,
+          },
+          lineStyle: {
+            normal: {
+              color: '#fff',
+              width: 0,
+              curveness: 0.2,
+            },
+          },
+          data: convertData(mapData),
+        },
+
+        {
+          name: ' 出货量（件）',
+          type: 'effectScatter',
+          coordinateSystem: 'geo',
+          zlevel:3,
+
+          showEffectOn:'emphasis',
+          // rippleEffect: {
+          //   brushType: 'stroke',
+          // },
+          tooltip:{show:false},
+     
+          symbol: 'image://./images/map-icon.png',
+          symbolSize:function(params) {
+            // console.log(params)
+              var size = 20 + (params[2].size - 5) / 5;
+              return size;
+            },
+          itemStyle: {
+            normal: {
+              color: '#fff',
+            },
+          },
+          data: mapData.map(function(dataItem ) {
+           
+            // console.log(dataItem[1].value);
+            // console.log(geoCoordMap[dataItem[1].name].push(dataItem[1].value))
+            // console.log(geoCoordMap[dataItem[1].name].concat([dataItem[1].value]));
+            var valueData = geoCoordMap[dataItem[1].name];
+            // console.log(valueData);
+            valueData.push({size:dataItem[1].value});
+            // console.log(key)
+            // console.log(valueData);
+            return {
+              name: dataItem[1].name,
+              value:valueData,
+            
+            };
+          }),
         },
       ],
     };
     var chinaMap = echarts.init(ele.get(0), 'steven.fu');
     chinaMap.setOption(option);
     tools.loopShowTooltip(chinaMap, option, {
-        loopSeries: true
-      });
+      loopSeries: true,
+    });
   },
 };
