@@ -38,11 +38,12 @@ module.exports = {
     };
     var mapData = data;
     var rangeData = mapData.map(function(dataItem ) {
-
+      var toCoord = geoCoordMap[dataItem[1].name];
 
       return {
         name: dataItem[1].name,
         value:dataItem[1].value,
+        toCoord
       };
     });
 
@@ -65,7 +66,7 @@ module.exports = {
       }
       return res;
     };
-    console.log(convertData(mapData))
+    // console.log(convertData(mapData))
     option = {
       //  backgroundColor: '#404a59',
       //  title: {
@@ -154,7 +155,7 @@ module.exports = {
           mapType: 'china',
           // coordinateSystem: 'geo',
           zoom: 1.2,
-  
+          showLegendSymbol: false,
           //   symbol: 'pin',
           // symbol: 'image://./images/map-icon.png',
       
