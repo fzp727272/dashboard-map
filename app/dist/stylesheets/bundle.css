@@ -4680,19 +4680,96 @@ body {
   font-family: "微软雅黑",sans-serif !important;
 }
 
+@media screen and (min-width: 980px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 80px;
+  -ms-flex-pack: center;
+      justify-content: center;
+  line-height: 40px;
+}
+
+.nav-bar .item1 {
+  line-height: 60px;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  top: 0px;
+  text-align: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.nav-bar .item1 .logo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding-right: 0.375em;
+}
+
+.nav-bar .item1 .logo img {
+  width: 60%;
+}
+
+.nav-bar .item1 .text {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.nav-bar .item2 {
+  padding-right: 2.25em;
+}
+
+.nav-bar .item2 .time {
+  color: #fff;
+}
+
 .dashboard-container {
   display: -ms-flexbox;
   display: flex;
-  margin-top: 0px;
+  margin-top: 40px;
   -ms-flex: 1;
       flex: 1;
   -ms-flex-direction: row;
       flex-direction: row;
-  padding: 24px 24px 24px 24px;
+  padding: 1.5em 1.5em 1.5em 1.5em;
 }
 
 .dashboard-container .itemsContainer {
-  padding: 12px;
+  padding: 0.75em;
 }
 
 .dashboard-container .dashboard-row-1 {
@@ -4733,8 +4810,12 @@ body {
 .dashboard-panel {
   -ms-flex: 1;
       flex: 1;
-  border-radius: 3px;
-  background: #090919;
+  border-radius: 6px;
+  border: 1px solid rgba(47, 89, 255, 0.3);
+  margin: 0.25em 0.25em;
+  padding-top: 0.375em;
+  padding-bottom: 0.375em;
+  background-image: linear-gradient(-180deg, rgba(43, 81, 237, 0) 0%, rgba(43, 81, 237, 0.1) 60%, rgba(43, 81, 237, 0.2) 98%);
   display: -ms-flexbox;
   display: flex;
   position: relative;
@@ -4753,17 +4834,17 @@ body {
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center;
-  padding-right: 12px;
+  padding-right: 0.75em;
 }
 
 .dashboard-panel .panel-header .panel-title-value {
   color: #fff;
-  font-size: 30px;
+  font-size: 1.5em;
 }
 
 .dashboard-panel .panel-header .panel-header-button-container {
   color: #7082AF;
-  font-size: 12px;
+  font-size: 0.75em;
 }
 
 .dashboard-panel .panel-header .panel-header-button-container .panel-header-button {
@@ -4780,9 +4861,9 @@ body {
 }
 
 .dashboard-panel .panel-title {
-  font-size: 16px;
+  font-size: 1.25em;
   color: #fff;
-  padding: 12px;
+  padding: 0.75em;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
@@ -4796,7 +4877,7 @@ body {
   border: 1px solid #807e8f;
   background: rgba(0, 0, 0, 0);
   color: #b9b8c1;
-  margin-top: -4px;
+  margin-top: -0.25em;
 }
 
 .dashboard-panel .panel-body {
@@ -4815,15 +4896,15 @@ body {
 .dashboard-panel .table-container {
   -ms-flex: 1;
       flex: 1;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   max-height: 10px;
 }
 
 .dashboard-panel .table-container .table-header {
-  margin-top: 12px;
+  margin-top: 0.75em;
   color: #7082AF;
-  font-size: 12px;
+  font-size: 0.75em;
   display: -ms-flexbox;
   display: flex;
 }
@@ -4867,7 +4948,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 8px;
 }
 
 .col-2 {
@@ -4877,7 +4957,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 8px;
 }
 
 .col-3 {
@@ -4887,7 +4966,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 8px;
 }
 
 .col-4 {
@@ -4897,7 +4975,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 8px;
 }
 
 .col-5 {
@@ -4907,7 +4984,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 8px;
 }
 
 .col-6 {
@@ -4917,7 +4993,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 8px;
 }
 
 .col-8 {
@@ -4927,7 +5002,6 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 8px;
 }
 
 .chart-container {
@@ -4938,7 +5012,7 @@ body {
 }
 
 #dayChart {
-  padding: 12px 0;
+  padding: 0.75em 0;
 }
 
 .warehouse-good-rank-item {
@@ -5105,7 +5179,7 @@ body {
       flex-direction: column;
   -ms-flex: 1;
       flex: 1;
-  padding: 12px;
+  padding: 0.75em;
 }
 
 #warehouse-statistics .statistics-container .statistics-row {
@@ -5129,7 +5203,7 @@ body {
 }
 
 #warehouse-statistics .statistics-container .statistics-list .unit {
-  font-size: 12px;
+  font-size: 0.75em;
   margin-left: 4px;
 }
 
@@ -5138,7 +5212,7 @@ body {
   height: 16px;
   border-radius: 50%;
   background: #2F59FF;
-  margin-right: 12px;
+  margin-right: 0.25em;
 }
 
 #warehouse-statistics .statistics-container .statistics-list .statistics-text-container {
@@ -5148,7 +5222,7 @@ body {
 
 #warehouse-statistics .statistics-container .statistics-list .statistics-text-container .statistics-value {
   color: #fff;
-  font-size: 18px;
+  font-size: 1.25em;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -5158,9 +5232,9 @@ body {
 }
 
 #warehouse-statistics .statistics-container .statistics-list .statistics-text-container .statistics-label {
-  font-size: 12px;
+  font-size: 0.75em;
   color: #7082AF;
-  margin-top: 12px;
+  margin-top: 0.375em;
   margin-left: 28px;
 }
 
@@ -5173,7 +5247,7 @@ body {
   display: flex;
   -ms-flex: 1px;
       flex: 1px;
-  padding: 12px 12px 36px 12px;
+  padding: 0.75em 0.75em 0.75em 0.75em;
   -ms-flex-direction: column;
       flex-direction: column;
 }
@@ -5185,6 +5259,7 @@ body {
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
+  padding-bottom: 0.75em;
 }
 
 #warehouse-state .warehouse-state-row .warehouse-state-list {
@@ -5210,23 +5285,23 @@ body {
 
 #warehouse-state .warehouse-state-row .warehouse-state-list .dashboard-progress .progress-ration {
   position: absolute;
-  font-size: 16px;
+  font-size: 1.5em;
   color: #fff;
 }
 
 #warehouse-state .warehouse-state-row .warehouse-state-list .warehouse-state-text {
-  margin-top: -8px;
+  margin-top: 0.25em;
 }
 
 #warehouse-state .warehouse-state-row .warehouse-state-list .warehouse-state-text .warehouse-state-text-title {
-  font-size: 12px;
+  font-size: 0.75em;
   color: #7082AF;
   text-align: center;
 }
 
 #warehouse-state .warehouse-state-row .warehouse-state-list .warehouse-state-text .warehouse-state-text-value {
-  margin-top: 12px;
-  font-size: 16px;
+  margin-top: 0.75em;
+  font-size: 1.25em;
   color: #fff;
   text-align: center;
 }
@@ -5292,3 +5367,10 @@ td .tag {
 }
 
 /* demo styles */
+#canvas-background {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}

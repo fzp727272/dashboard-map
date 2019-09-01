@@ -3399,6 +3399,14 @@ jquery-circle-progress@^1.2.2:
   dependencies:
     jquery "*"
 
+jquery.countup.js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/jquery.countup.js/download/jquery.countup.js-1.0.1.tgz#0527c01f0711739e472cfd2d2d2ffd36ab385f0b"
+  integrity sha1-BSfAHwcRc55HLP0tLS/9Nqs4Xws=
+  dependencies:
+    jquery "^3.1.1"
+    waypoints "^4.0.1"
+
 jquery@*, jquery@^3.1.1:
   version "3.4.1"
   resolved "https://registry.npm.taobao.org/jquery/download/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
@@ -6473,6 +6481,11 @@ ware@^1.2.0:
   integrity sha1-0bFPOdLiy0q4xAmPdW/ksWTkc9Q=
   dependencies:
     wrap-fn "^0.1.0"
+
+waypoints@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npm.taobao.org/waypoints/download/waypoints-4.0.1.tgz#09979a0573810b29627cba4366a284a062ec69c8"
+  integrity sha1-CZeaBXOBCylifLpDZqKEoGLsacg=
 
 whet.extend@~0.9.9:
   version "0.9.9"

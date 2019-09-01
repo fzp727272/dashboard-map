@@ -8,6 +8,7 @@
 @import "base/base";
 
 //component
+@import "components/resize.scss";
 @import "components/container.scss";
 @import "components/orderToday.scss";
 @import "components/warehouseRation.scss";
@@ -16,6 +17,7 @@
 @import "components/warehouseGood.scss";
 @import "components/inventoryUtilization.scss";
 @import "components/table.scss";
+@import "components/canvasBackground.scss";
 // @import "components/dayTime.scss";
 // @import "components/storeRation.scss";
 // @import "components/piechart.scss";

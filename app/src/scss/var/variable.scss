@@ -3,6 +3,7 @@
 // // $mainColor:#525A65; // 深灰色
 
 
+
 $darkColor:#090919;
 $lightDarkColor:#090919;
 // $cardBorderColor:rgba(49,61,79,.4);
@@ -21,8 +22,23 @@ $yellowColor:#edcd61;
 $redColor:#ff87d4;
 
 
-$paddingSize:12px;
+$paddingSize:1em * 3/4;
 
-$fontSizeLarge:24px;
-$fontSizeMiddle:16px;
-$fontSizeNormal:12px;
+$fontSizeNormal:$paddingSize;
+$fontSizeLarge:$fontSizeNormal*2;
+$fontSizeMiddle:$fontSizeNormal * 5 / 3;
+
+
+// /*默认*/
+// @media screen and (min-width: 980px){$paddingSize:12px;
+// }
+// @media (min-width: 1440px) {$paddingSize:18px;
+//  }
+// @media (min-width: 1920px) {$paddingSize:24px; }
+// $fontSizeNormal:$paddingSize;
+// $fontSizeLarge:$fontSizeNormal*2;
+// $fontSizeMiddle:$fontSizeNormal * 5 / 3;
+
+
+
+

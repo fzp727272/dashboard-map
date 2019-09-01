@@ -7,6 +7,12 @@ var goodRank = require('./component/goodRank');
 var chinaMap = require('./component/mapRender');
 var warehouseValue = require('./component/warehouseValue');
 var staffOperation = require('./component/staffOperation');
+var canvasBackground = require('./component/canvasBackground');
+var count = require('./count');
+
+canvasBackground.init($('#canvas-background'));
+
+
 
 //假数据
 var xAxisData = [];
@@ -37,6 +43,11 @@ for (var i = 0; i < 12; i++) {
 //   $('body').css({ transform: scaleSize });
 // }
 
+
+
+
+
+
 //仓库统计数据
 $(function(){
   function warehouseStatistics(data){
@@ -45,17 +56,25 @@ $(function(){
     if(item.state == 'warning'){
       $ele.eq(key).addClass('statistics-list-warning');
     }
-    $ele.eq(key).find('.statistics-value').children('span').eq(0).html(item.value)
-    $ele.eq(key).find('.statistics-label').html(item.name)
+    // $ele.eq(key).find('.statistics-value').children('span').eq(0).html(item.value)
+    $ele.eq(key).find('.statistics-label').html(item.name);
+    // console.log(item.value)
+    count.start($ele.eq(key).find('.statistics-value').children('span').eq(0),{ 
+      time: 3000, 
+      num: Number(item.value), 
+      regulator: 100 })
     })
+
+
   }
   var data = [
-    {name:'当前库存',state:'normal',value:'190,908',unit:'件'},
-    {name:'当前库存',state:'warning',value:'190,908',unit:'件'},
-    {name:'当前库存',state:'warning',value:'180,908',unit:'件'},
-    {name:'当前库存',state:'normal',value:'1890,908',unit:'件'},
+    {name:'当前库存',state:'normal',value:'190908',unit:'件'},
+    {name:'当前库存',state:'warning',value:'190908',unit:'件'},
+    {name:'当前库存',state:'warning',value:'180908',unit:'件'},
+    {name:'当前库存',state:'normal',value:'180908',unit:'件'},
   ]
   warehouseStatistics(data);
+
 });
 
 
@@ -63,10 +82,10 @@ $(function(){
 $(function() {
   require('jquery-circle-progress');
   var data = [
-    { ratio: 0.67, title: '周转率1', value: '1231,890' },
-    { ratio: 0.17, title: '周转率2', value: '1231,890' },
-    { ratio: 0.58, title: '周转率3', value: '1231,890' },
-    { ratio: 0.97, title: '周转率4', value: '1231,890' },
+    { ratio: 0.67, title: '周转率1', value: '1231890' },
+    { ratio: 0.17, title: '周转率2', value: '1231890' },
+    { ratio: 0.58, title: '周转率3', value: '1231890' },
+    { ratio: 0.97, title: '周转率4', value: '1231890' },
   ];
   data.map(function(item, key) {
     var ele =  $('.warehouse-state-list')
@@ -81,9 +100,21 @@ $(function() {
         thickness: ($('.dashboard-progress').width()) / 20,
       });
       var value = item.ratio * 1000 / 10;
-      ele.find(".progress-ration").html(value+'%');
+      
+      // .html(value+'%');
+      count.start(ele.find(".progress-ration").children('span'),{ 
+        time: 1000, 
+        num: Number(value), 
+        regulator: 100 })
+
+      
       ele.find(".warehouse-state-text-title").html(item.title);
-      ele.find(".warehouse-state-text-value").html(item.value);
+
+      count.start(ele.find(".warehouse-state-text-value"),{ 
+        time: 3000, 
+        num: Number(item.value), 
+        regulator: 100 })
+      // .html(item.value);
   });
 
 });
