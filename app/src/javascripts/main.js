@@ -12,7 +12,9 @@ var count = require('./count');
 
 canvasBackground.init($('#canvas-background'));
 
-
+var screenWidth = $(window).width()
+var screenHeight = $(window).height()
+alert(screenWidth+'|'+screenHeight);
 
 //假数据
 var xAxisData = [];
