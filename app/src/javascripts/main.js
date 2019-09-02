@@ -7,10 +7,10 @@ var goodRank = require('./component/goodRank');
 var chinaMap = require('./component/mapRender');
 var warehouseValue = require('./component/warehouseValue');
 var staffOperation = require('./component/staffOperation');
-var canvasBackground = require('./component/canvasBackground');
+// var canvasBackground = require('./component/canvasBackground');
 var count = require('./count');
 
-canvasBackground.init($('#canvas-background'));
+// canvasBackground.init($('#canvas-background'));
 
 var screenWidth = $(window).width()
 var screenHeight = $(window).height()
@@ -261,7 +261,7 @@ $(function() {
 //出入库统计
 $(function() {
   //
-  var delayTime = 10000;
+  var delayTime = 150000;
 
   function yearData() {
     //近一年数据
@@ -359,7 +359,7 @@ $(function() {
     goodRank.init($('#warehouse-good-rank'), data1);
   }
   //间隔时间
-  var delayTime = 5000;
+  var delayTime = 15000;
 
   function next() {
     monthData();
