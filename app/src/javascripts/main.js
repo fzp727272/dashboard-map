@@ -16,6 +16,10 @@ var screenWidth = $(window).width()
 var screenHeight = $(window).height()
 alert(screenWidth+'|'+screenHeight);
 
+var htmlWidth = $('html').width()
+var htmlHeight = $('html').height()
+alert(htmlWidth+'|'+htmlHeight);
+
 //假数据
 var xAxisData = [];
 var data1 = [];
