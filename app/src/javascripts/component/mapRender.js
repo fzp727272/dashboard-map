@@ -138,8 +138,10 @@ module.exports = {
           normal: {
             areaColor:'#090919',
             // areaColor: function(params){console.log(params)},
-            borderWidth: 4,
+            borderWidth:2,
             borderColor: 'rgba(47,89,255,1)',
+            shadowColor: 'rgba(47,89,255,1)',
+            shadowBlur:6,
           },
           emphasis: {
             show: false,

@@ -33,24 +33,31 @@ for (var i = 0; i < 12; i++) {
   data3.push((Math.random() * 1000).toFixed(2));
 }
 
-var mvp = document.getElementById('viewport');
-var setString = 'width=1440, initial-scale=' + $(window).width() / 1440+', viewport-fit=cover'
-mvp.setAttribute('content',setString);
-//屏幕宽度缩放
-// var screenWidth = $('html').width();
-// var screenHeight = $('html').height();
-// if (screenWidth < 1440) {
-//   $('html').css({
-//     display: 'flex',
-//     'align-items': 'center',
-//     'justify-content': 'center',
-//     overflow:'hidden'
-//   });
-//   $('body').width(1440);
-//   $('body').height((1440 * screenHeight) / screenWidth);
-//   var scaleSize = 'scaleY(' + screenWidth / 1440 + ')';
-//   $('body').css({transform:scaleSize, });
-// }
+// var mvp = document.getElementById('viewport');
+// var setString = 'width=1440, initial-scale=' + $(window).width() / 1440+', viewport-fit=cover'
+// mvp.setAttribute('content',setString);
+// 屏幕宽度缩放
+var screenWidth = $('html').width();
+var screenHeight = $('html').height();
+
+  $('body').css({
+    display: 'flex',
+    width:1440,
+    height:(1440 * screenHeight) / screenWidth,
+    'align-items': 'center',
+    'justify-content': 'center',
+    overflow:'hidden',
+    position:'relative'
+  });
+
+  var scaleSize = 'scale(' + screenWidth / 1440+' ,'+screenWidth / 1440+ ')';
+  // console.log('1231'+scaleSize)
+  $('#resize-content').css({'transform':scaleSize,
+  display:'flex',
+  'transform-origin':'left top',
+width:'100%',
+height:'100%' });
+
 
 
 
