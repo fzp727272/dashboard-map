@@ -4680,13 +4680,7 @@ body {
   font-family: "微软雅黑",sans-serif !important;
 }
 
-@media screen and (min-width: 980px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 1440px) {
+@media (min-width: 900px) {
   html {
     font-size: 14px;
   }
@@ -4919,9 +4913,9 @@ body {
 }
 
 .dashboard-panel .table-container .table-list {
-  height: 30px;
+  height: 1.875em;
   width: 100%;
-  font-size: 14px;
+  font-size: 1.25em;
   display: -ms-flexbox;
   display: flex;
   color: #fff;
@@ -5208,8 +5202,8 @@ body {
 }
 
 #warehouse-statistics .statistics-container .statistics-list .tag {
-  width: 16px;
-  height: 16px;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
   background: #2F59FF;
   margin-right: 0.25em;
@@ -5336,20 +5330,20 @@ table {
 }
 
 th {
-  padding: 8px 4px;
+  padding: 0.5em 0.25em;
   text-align: left;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 0.75em;
   color: #7082AF;
   text-transform: uppercase;
 }
 
 td {
-  padding: 8px 0px;
+  padding: 0.5em 0px;
   text-align: left;
   vertical-align: middle;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 0.75em;
   color: #fff;
 }
 

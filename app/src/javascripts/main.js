@@ -12,13 +12,13 @@ var count = require('./count');
 
 // canvasBackground.init($('#canvas-background'));
 
-var screenWidth = $(window).width()
-var screenHeight = $(window).height()
-alert(screenWidth+'|'+screenHeight);
+// var screenWidth = $(window).width()
+// var screenHeight = $(window).height()
+// alert(screenWidth+'|'+screenHeight);
 
-var htmlWidth = $('html').width()
-var htmlHeight = $('html').height()
-alert(htmlWidth+'|'+htmlHeight);
+// var htmlWidth = $('html').width()
+// var htmlHeight = $('html').height()
+// alert(htmlWidth+'|'+htmlHeight);
 
 //假数据
 var xAxisData = [];
@@ -33,20 +33,23 @@ for (var i = 0; i < 12; i++) {
   data3.push((Math.random() * 1000).toFixed(2));
 }
 
-
-// //屏幕宽度缩放
-// var screenWidth = $(window).width();
-// var screenHeight = $(window).height();
-// if (screenWidth > 1920) {
+var mvp = document.getElementById('viewport');
+var setString = 'width=1440, initial-scale=' + $(window).width() / 1440+', viewport-fit=cover'
+mvp.setAttribute('content',setString);
+//屏幕宽度缩放
+// var screenWidth = $('html').width();
+// var screenHeight = $('html').height();
+// if (screenWidth < 1440) {
 //   $('html').css({
 //     display: 'flex',
 //     'align-items': 'center',
 //     'justify-content': 'center',
+//     overflow:'hidden'
 //   });
-//   $('body').width(1920);
-//   $('body').height((1920 * screenHeight) / screenWidth);
-//   var scaleSize = 'scale(' + screenWidth / 1920 + ')';
-//   $('body').css({ transform: scaleSize });
+//   $('body').width(1440);
+//   $('body').height((1440 * screenHeight) / screenWidth);
+//   var scaleSize = 'scaleY(' + screenWidth / 1440 + ')';
+//   $('body').css({transform:scaleSize, });
 // }
 
 

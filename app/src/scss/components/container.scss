@@ -159,9 +159,9 @@ padding: $paddingSize*2 $paddingSize*2 $paddingSize*2 $paddingSize*2;
   margin-top: 16px;
 }
     .table-list{
-      height: 30px;
+      height: $paddingSize*2.5;
       width: 100%;
-      font-size: 14px;
+      font-size: $fontSizeMiddle;
       display: flex;
       color:#fff;
       animation: listShow .6s;
