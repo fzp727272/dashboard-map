@@ -37,8 +37,11 @@ for (var i = 0; i < 12; i++) {
 // var setString = 'width=1440, initial-scale=' + $(window).width() / 1440+', viewport-fit=cover'
 // mvp.setAttribute('content',setString);
 // 屏幕宽度缩放
+
 var screenWidth = $('html').width();
 var screenHeight = $('html').height();
+
+if(screenWidth<1280){
 
   $('body').css({
     display: 'flex',
@@ -47,7 +50,9 @@ var screenHeight = $('html').height();
     'align-items': 'center',
     'justify-content': 'center',
     overflow:'hidden',
-    position:'relative'
+    position:'relative',
+    'align-items': 'center',
+    'justify-content':' center'
   });
 
   var scaleSize = 'scale(' + screenWidth / 1440+' ,'+screenWidth / 1440+ ')';
@@ -55,8 +60,12 @@ var screenHeight = $('html').height();
   $('#resize-content').css({'transform':scaleSize,
   display:'flex',
   'transform-origin':'left top',
+  'justify-content':' center',
+
 width:'100%',
 height:'100%' });
+}
+  
 
 
 

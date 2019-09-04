@@ -23,7 +23,7 @@ module.exports = {
         $this.insert(ele.find('tbody'),item);
       });
       function lunbo (){
-        ele.find(".panel-body").animate({scrollTop: '300px'}, 8000).animate({scrollTop: '0px'}, 8000)
+        ele.find(".panel-body").animate({scrollTop: '400px'}, 8000).animate({scrollTop: '0px'}, 8000)
       }
 setInterval(lunbo,1600)
 // ele.children('tr').css({
