@@ -4970,6 +4970,7 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .col-2 {
@@ -4979,6 +4980,7 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .col-3 {
@@ -4988,6 +4990,7 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .col-4 {
@@ -4997,6 +5000,7 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .col-5 {
@@ -5006,6 +5010,7 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .col-6 {
@@ -5015,6 +5020,7 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .col-8 {
@@ -5024,6 +5030,7 @@ body {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  overflow: hidden;
 }
 
 .chart-container {
@@ -5201,7 +5208,7 @@ body {
       flex-direction: column;
   -ms-flex: 1;
       flex: 1;
-  padding: 0.75em;
+  padding: 0 0.75em 0 0.75em;
 }
 
 #warehouse-statistics .statistics-container .statistics-row {
@@ -5209,8 +5216,8 @@ body {
   display: flex;
   -ms-flex: 1;
       flex: 1;
-  -ms-flex-direction: row;
-      flex-direction: row;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 
 #warehouse-statistics .statistics-container .statistics-list {
@@ -5230,21 +5237,43 @@ body {
 }
 
 #warehouse-statistics .statistics-container .statistics-list .tag {
-  width: 1em;
-  height: 1em;
+  width: 2.25em;
+  height: 2.25em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   border-radius: 50%;
-  background: #2F59FF;
-  margin-right: 0.25em;
+  font-size: 0.375em;
+  background: rgba(47, 89, 255, 0.3);
+  color: #2f59ff;
+  margin-right: 0.75em;
+}
+
+#warehouse-statistics .statistics-container .statistics-list .tag .fa-reply {
+  transform: scaleX(-1);
+}
+
+#warehouse-statistics .statistics-container .statistics-list .tag .fa-reply-all {
+  transform: scaleX(-1);
 }
 
 #warehouse-statistics .statistics-container .statistics-list .statistics-text-container {
-  -ms-flex-direction: column;
-      flex-direction: column;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 
 #warehouse-statistics .statistics-container .statistics-list .statistics-text-container .statistics-value {
-  color: #fff;
   font-size: 1.25em;
+  color: #fff;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -5254,22 +5283,27 @@ body {
 }
 
 #warehouse-statistics .statistics-container .statistics-list .statistics-text-container .statistics-label {
-  font-size: 0.75em;
-  color: #7082AF;
-  margin-top: 0.375em;
-  margin-left: 28px;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 1em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 #warehouse-statistics .statistics-container .statistics-list-warning .tag {
-  background: #FF006D;
+  background: rgba(255, 0, 109, 0.3);
+  color: #ff006d;
 }
 
 #warehouse-state {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex: 1px;
-      flex: 1px;
-  padding: 0.75em 0.75em 0.75em 0.75em;
+  -ms-flex: 1;
+      flex: 1;
   -ms-flex-direction: column;
       flex-direction: column;
 }
@@ -5312,12 +5346,12 @@ body {
 }
 
 #warehouse-state .warehouse-state-row .warehouse-state-list .warehouse-state-text {
-  margin-top: 0.25em;
+  margin-top: 0.75em;
 }
 
 #warehouse-state .warehouse-state-row .warehouse-state-list .warehouse-state-text .warehouse-state-text-title {
-  font-size: 0.75em;
-  color: #7082AF;
+  font-size: 1.25em;
+  color: #fff;
   text-align: center;
 }
 

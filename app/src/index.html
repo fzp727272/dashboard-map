@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<title>
+  仓库统计数据
+</title>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -16,6 +18,7 @@
   <!-- <meta name="sugar-company" content=""> -->
   <!-- Don't delete this. It's needed for development workflow. -->
   <link rel="stylesheet" href="stylesheets/bundle.css" />
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +50,7 @@
         </div>
     </div>
     <div class="time-container">
-      <span>
+      <span id="current-time">
         2019-09-30 09:30:00
       </span>
     </div>
@@ -81,52 +84,56 @@
             <div class="statistics-row">
               <div class="statistics-list">
                 <div class="statistics-text-container">
-                  <div class="statistics-value">
-                    <div class="tag"></div>
-                    <span>---</span><span class="unit">件</span>
-                  </div>
                   <div class="statistics-label">
-                    ----
+                    <div class="tag"><i class="fa "></i></div>
+                    <span>---</span>
+                  </div>
+                  <div class="statistics-value">
+                      <span>----</span><span class="unit">件</span>
                   </div>
                 </div>
               </div>
-
               <div class="statistics-list">
-                <div class="statistics-text-container">
-                  <div class="statistics-value">
-                    <div class="tag"></div>
-                    <span>---</span><span class="unit">件</span>
-                  </div>
-                  <div class="statistics-label">
-                    ----
+                  <div class="statistics-text-container">
+                    <div class="statistics-label">
+                      <div class="tag">
+                        <i class="fa "></i>
+                      </div>
+                      <span>---</span>
+                    </div>
+                    <div class="statistics-value">
+                        <span>----</span><span class="unit">件</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+
+         
             </div>
             <div class="statistics-row">
-              <div class="statistics-list ">
-                <div class="statistics-text-container">
-                  <div class="statistics-value">
-                    <div class="tag"></div>
-                    <span>---</span><span class="unit">件</span>
-                  </div>
-                  <div class="statistics-label">
-                    ----
-                  </div>
-                </div>
-              </div>
+        
 
-              <div class="statistics-list">
-                <div class="statistics-text-container">
-                  <div class="statistics-value">
-                    <div class="tag"></div>
-                    <span>---</span><span class="unit">件</span>
+                <div class="statistics-list">
+                    <div class="statistics-text-container">
+                      <div class="statistics-label">
+                        <div class="tag"><i class="fa "></i></div>
+                        <span>---</span>
+                      </div>
+                      <div class="statistics-value">
+                          <span>----</span><span class="unit">件</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="statistics-label">
-                    ----
-                  </div>
-                </div>
-              </div>
+                  <div class="statistics-list">
+                      <div class="statistics-text-container">
+                        <div class="statistics-label">
+                          <div class="tag"><i class="fa "></i></div>
+                          <span>---</span>
+                        </div>
+                        <div class="statistics-value">
+                            <span>----</span><span class="unit">件</span>
+                        </div>
+                      </div>
+                    </div>
             </div>
           </div>
         </div>
@@ -148,7 +155,7 @@
                 </div>
                 <div class="warehouse-state-text">
                   <div class="warehouse-state-text-title">周转率</div>
-                  <div class="warehouse-state-text-value">1980,907</div>
+                  <!-- <div class="warehouse-state-text-value">1980,907</div> -->
                 </div>
               </div>
               <div class="warehouse-state-list">
@@ -157,7 +164,7 @@
                 </div>
                 <div class="warehouse-state-text">
                   <div class="warehouse-state-text-title">周转率</div>
-                  <div class="warehouse-state-text-value">1980,907</div>
+                  <!-- <div class="warehouse-state-text-value">1980,907</div> -->
                 </div>
               </div>
             </div>
@@ -168,7 +175,7 @@
                 </div>
                 <div class="warehouse-state-text">
                   <div class="warehouse-state-text-title">周转率</div>
-                  <div class="warehouse-state-text-value">1980,907</div>
+                  <!-- <div class="warehouse-state-text-value">1980,907</div> -->
                 </div>
               </div>
               <div class="warehouse-state-list">
@@ -177,7 +184,7 @@
                 </div>
                 <div class="warehouse-state-text">
                   <div class="warehouse-state-text-title">周转率</div>
-                  <div class="warehouse-state-text-value">1980,907</div>
+                  <!-- <div class="warehouse-state-text-value">1980,907</div> -->
                 </div>
               </div>
             </div>
@@ -320,7 +327,7 @@
       </div>
     </div>
     <div class="col-3">
-      <div class="dashboard-row-1">
+      <div class="dashboard-row-3">
           <div class="dashboard-panel statistics-chart">
               <div class="panel-header">
                 <div class="panel-title">
@@ -337,7 +344,7 @@
             </div>
 
       </div>
-      <div class="dashboard-row-1">
+      <div class="dashboard-row-3">
           <div class=" dashboard-panel">
               <div class="panel-header">
                 <div class="panel-title">
@@ -350,7 +357,7 @@
               </div>
             </div>
       </div>
-      <div class="dashboard-row-1" id="warehouse-good-rank-container">
+      <div class="dashboard-row-2" id="warehouse-good-rank-container">
           <div class=" dashboard-panel">
               <div class="panel-header">
                 <div class="panel-title">

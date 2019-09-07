@@ -1,8 +1,8 @@
 #warehouse-state{
     
     display: flex;
-    flex: 1px;
-    padding: $paddingSize $paddingSize $paddingSize $paddingSize ;
+    flex: 1;
+    // padding: $paddingSize $paddingSize $paddingSize $paddingSize ;
     flex-direction: column;
     .warehouse-state-row{
         flex: 1;
@@ -29,10 +29,11 @@
 
         }
         .warehouse-state-text{
-            margin-top: $fontSizeNormal/3;
+            margin-top: $fontSizeNormal;
             .warehouse-state-text-title{
-                font-size: $fontSizeNormal;
-                color: $textLigh;
+                font-size: $fontSizeMiddle;
+                // color: $textLigh;
+                color: $white;
                 text-align: center;
             }
             .warehouse-state-text-value{

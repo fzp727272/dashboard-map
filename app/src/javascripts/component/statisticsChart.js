@@ -1,7 +1,7 @@
 var $ = require('jquery');
 
 module.exports = {
-  init: function(ele, xAxisData, data1, data2, data3) {
+  init: function(ele, xAxisData, data1, data2, data3,data4) {
     // app.title = '柱状图框选';
 
     var itemStyle = {
@@ -24,7 +24,7 @@ module.exports = {
 
       backgroundColor: 'rgba(255,255,255,0)',
       legend: {
-        data: ['收货', '发货', '库存'],
+        data: ['收货', '发货', '库存','每单出库量'],
         top: 0,
         right: 12,
         textStyle: {
@@ -92,7 +92,7 @@ module.exports = {
 
         splitArea: { show: false },
       },
-      yAxis: {
+      yAxis: [{
         // inverse: true,
         splitArea: { show: false },
         splitLine: {
@@ -105,6 +105,20 @@ module.exports = {
           },
         },
       },
+      {
+        // inverse: true,
+        splitArea: { show: false },
+        splitLine: {
+          show: true,
+          //  改变轴线颜色
+          lineStyle: {
+            width: 0.3,
+            // 使用深浅的间隔色
+            color: ['rgba(255,255,255,.3)'],
+          },
+        },
+      }
+    ],
       grid: {
         left: 20,
         right: 12,
@@ -160,6 +174,19 @@ module.exports = {
           symbolSize:2,
           itemStyle: itemStyle,
           data: data3,
+        },
+        {
+          name: '每单出库量',
+          type: 'line',
+          yAxisIndex: 1,
+          symbolSize:0,
+
+          lineStyle:{
+            color:'rgba(255,255,255,0.4)',
+            type:'dashed'
+          },
+          itemStyle: {},
+          data: data4,
         },
       ],
     };

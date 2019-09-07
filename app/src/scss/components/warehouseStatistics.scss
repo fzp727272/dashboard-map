@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: $paddingSize;
+    padding:0 $paddingSize 0  $paddingSize;
     .statistics-row {
       display: flex;
       flex: 1;
-      flex-direction: row;
+      flex-direction: column;
     }
     .statistics-list {
       flex: 1;
@@ -20,33 +20,48 @@
         margin-left: 4px;
       }
       .tag {
-        width: $paddingSize / 3 *4;
-        height: $paddingSize / 3 *4;
+        width: $paddingSize *3;
+        height: $paddingSize *3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 50%;
-        background: $blue;
-        margin-right: $paddingSize /3;
+        font-size: $fontSizeNormal /2;
+        background: rgba(47,89,255,0.3);
+        color: rgba(47,89,255,1);
+        margin-right: $paddingSize ;
+        .fa-reply{transform: scaleX(-1)}
+        .fa-reply-all{transform: scaleX(-1)}
       }
 
       .statistics-text-container {
-        flex-direction: column;
+        flex-direction: row;
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
         .statistics-value {
+          font-size:$fontSizeNormal*5/3;
           color: $white;
-          font-size: $fontSizeMiddle;
+  
           display: flex;
           flex-direction: row;
           align-items: center;
         }
         .statistics-label {
-          font-size: $fontSizeNormal;
-          color: $textLigh;
-          margin-top: $paddingSize /2;
-          margin-left: 28px;
+          color: $white;
+          font-weight: lighter;
+          // color: $textLigh;
+          font-size: $fontSizeNormal*4/3;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
         }
       }
     }
     .statistics-list-warning {
       .tag {
-        background: $red;
+        background: rgba(255,0,109,0.3);
+        color:rgba(255,0,109,1);
       }
     }
   }

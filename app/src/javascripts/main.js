@@ -20,22 +20,30 @@ var count = require('./count');
 // var htmlHeight = $('html').height()
 // alert(htmlWidth+'|'+htmlHeight);
 
+
+
+
+
 //假数据
 var xAxisData = [];
 var data1 = [];
 var data2 = [];
 var data3 = [];
+var data4 = [];
 
 for (var i = 0; i < 12; i++) {
   xAxisData.push(i + 1 + '月');
   data1.push((Math.random() * 3000).toFixed(2));
   data2.push((Math.random() * 2000).toFixed(2));
   data3.push((Math.random() * 1000).toFixed(2));
+  data4.push((Math.random() * 100).toFixed(2));
 }
 
 // var mvp = document.getElementById('viewport');
 // var setString = 'width=1440, initial-scale=' + $(window).width() / 1440+', viewport-fit=cover'
 // mvp.setAttribute('content',setString);
+
+
 // 屏幕宽度缩放
 
 var screenWidth = $('html').width();
@@ -67,9 +75,21 @@ height:'100%' });
 }
   
 
+//时间显示（右上角）
 
-
-
+$(function(){
+    setInterval(function(){   
+    var date=new Date();   
+    var year=date.getFullYear(); //获取当前年份   
+    var mon=date.getMonth()+1; //获取当前月份   
+    var da=date.getDate(); //获取当前日   
+    var day=date.getDay(); //获取当前星期几   
+    var h=date.getHours(); //获取小时   
+    var m=date.getMinutes(); //获取分钟   
+    var s=date.getSeconds(); //获取秒   
+    var showCurrent = year+'年'+mon+'月'+da+'日'+' '+h+':'+m+':'+s;   
+    $("#current-time").html(showCurrent) },1000)  
+})
 
 
 
@@ -81,8 +101,9 @@ $(function(){
     if(item.state == 'warning'){
       $ele.eq(key).addClass('statistics-list-warning');
     }
+    $ele.eq(key).find('.tag').children('i').addClass(item.icon)
     // $ele.eq(key).find('.statistics-value').children('span').eq(0).html(item.value)
-    $ele.eq(key).find('.statistics-label').html(item.name);
+    $ele.eq(key).find('.statistics-label').children('span').eq(0).html(item.name);
     // console.log(item.value)
     count.start($ele.eq(key).find('.statistics-value').children('span').eq(0),{ 
       time: 3000, 
@@ -93,10 +114,10 @@ $(function(){
 
   }
   var data = [
-    {name:'当前库存',state:'normal',value:'190908',unit:'件'},
-    {name:'当前库存',state:'warning',value:'190908',unit:'件'},
-    {name:'当前库存',state:'warning',value:'180908',unit:'件'},
-    {name:'当前库存',state:'normal',value:'180908',unit:'件'},
+    {name:'当前库存',state:'normal',value:'190908',unit:'件',icon:'fa-cubes'},
+    {name:'当前库存',state:'warning',value:'190908',unit:'件',icon:'fa-reply'},
+    {name:'当前库存',state:'warning',value:'180908',unit:'件',icon:'fa-reply-all'},
+    {name:'当前库存',state:'normal',value:'180908',unit:'件',icon:'fa-th-list'},
   ]
   warehouseStatistics(data);
 
@@ -115,11 +136,11 @@ $(function() {
   data.map(function(item, key) {
     var ele =  $('.warehouse-state-list')
     .eq(key);
-   
+  //  var circleSize = $('.dashboard-progress').width()>$('.dashboard-progress').height()?$('.dashboard-progress').width() - 30:$('.dashboard-progress').height() - 30
     ele.find('.dashboard-progress')
       .circleProgress({
         value: item.ratio,
-        size: $('.dashboard-progress').width() - 30,
+        size: $('.dashboard-progress').height()*1,
         lineCap: 'round',
         fill: { color: '#2F59FF' },
         thickness: ($('.dashboard-progress').width()) / 20,
@@ -284,12 +305,12 @@ $(function() {
 
   function yearData() {
     //近一年数据
-    statisticsChart.init($('#statistics-chart'), xAxisData, data1, data2, data3);
+    statisticsChart.init($('#statistics-chart'), xAxisData, data1, data2, data3,data4);
   }
 
   function monthData() {
     //近一月数据
-    statisticsChart.init($('#statistics-chart'), xAxisData, data3, data1, data1);
+    statisticsChart.init($('#statistics-chart'), xAxisData, data3, data1, data1,data4);
   }
 
   function next() {
@@ -349,11 +370,6 @@ $(function() {
     { name: '百雀羚IFSC...', value: 464280, rank: 3 },
     { name: '三生花雪莲...', value: 394848, rank: 4 },
     { name: '三生花金盏...', value: 709488, rank: 5 },
-    { name: '三生花山茶...', value: 665280, rank: 6 },
-    { name: '百雀羚IFS...', value: 464280, rank: 7 },
-    { name: '三生花雪莲...', value: 394848, rank: 8 },
-    { name: '百雀羚IFS...', value: 464280, rank: 9 },
-    { name: '三生花雪莲...', value: 394848, rank: 10 },
   ];
   //假数据 - 当年
   var data1 = [
@@ -362,11 +378,7 @@ $(function() {
     { name: '百雀羚IFSC123123123', value: 214280, rank: 3 },
     { name: '三生花雪莲123123123', value: 394848, rank: 4 },
     { name: '三生花金盏123123123', value: 567488, rank: 5 },
-    { name: '三生花山茶123123123', value: 123280, rank: 6 },
-    { name: '百雀羚IFS123123123', value: 531280, rank: 7 },
-    { name: '三生花雪莲123123123', value: 394848, rank: 8 },
-    { name: '百雀羚IFS123123123', value: 464280, rank: 9 },
-    { name: '三生花雪莲123123123', value: 394848, rank: 10 },
+
   ];
 
   //当月数据显示
