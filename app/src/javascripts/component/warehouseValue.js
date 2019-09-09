@@ -43,8 +43,8 @@ module.exports = {
       backgroundColor: 'rgba(255,255,255,0)',
       legend: {
         data: legendData,
-        top: 0,
-        right: 12,
+        bottom: 0,
+        center: 0,
         textStyle: {
           color: 'rgba(255,255,255,.4)',
         },
@@ -126,8 +126,8 @@ module.exports = {
       grid: {
         left: 20,
         right: 12,
-        top: 20,
-        bottom: 20,
+        top: 10,
+        bottom: 30,
         containLabel: true,
       },
       // visualMap: {

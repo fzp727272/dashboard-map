@@ -45,7 +45,7 @@ for (var i = 0; i < 12; i++) {
 
 
 // 屏幕宽度缩放
-
+function screenChange(){
 var screenWidth = $('html').width();
 var screenHeight = $('html').height();
 
@@ -73,7 +73,13 @@ if(screenWidth<1280){
 width:'100%',
 height:'100%' });
 }
-  
+};  
+screenChange();
+$(window).resize(function(){
+  // this.alert(111)
+  screenChange();
+  window.location.reload();
+})
 
 //时间显示（右上角）
 
@@ -84,9 +90,10 @@ $(function(){
     var mon=date.getMonth()+1; //获取当前月份   
     var da=date.getDate(); //获取当前日   
     var day=date.getDay(); //获取当前星期几   
-    var h=date.getHours(); //获取小时   
-    var m=date.getMinutes(); //获取分钟   
-    var s=date.getSeconds(); //获取秒   
+    var h=date.getHours()<10?"0"+date.getHours():date.getHours();//获取小时   
+    var m=date.getMinutes()<10?"0"+date.getMinutes():date.getMinutes(); //获取分钟   
+    var s=date.getSeconds()<10?"0"+date.getSeconds():date.getSeconds(); //获取秒   
+ 
     var showCurrent = year+'年'+mon+'月'+da+'日'+' '+h+':'+m+':'+s;   
     $("#current-time").html(showCurrent) },1000)  
 })
@@ -113,60 +120,72 @@ $(function(){
 
 
   }
-  var data = [
+  var staticData = [
     {name:'当前库存',state:'normal',value:'190908',unit:'件',icon:'fa-cubes'},
     {name:'当前库存',state:'warning',value:'190908',unit:'件',icon:'fa-reply'},
     {name:'当前库存',state:'warning',value:'180908',unit:'件',icon:'fa-reply-all'},
     {name:'当前库存',state:'normal',value:'180908',unit:'件',icon:'fa-th-list'},
   ]
-  warehouseStatistics(data);
+  warehouseStatistics(staticData);
+  // $(window).resize(function(){
+  //   warehouseStatistics(staticData);
+  // })
+})
 
-});
 
 
 //仓库当前状态 进度条
-$(function() {
+$(function(){
   require('jquery-circle-progress');
-  var data = [
+  var currentData = [
     { ratio: 0.67, title: '周转率1', value: '1231890' },
     { ratio: 0.17, title: '周转率2', value: '1231890' },
     { ratio: 0.58, title: '周转率3', value: '1231890' },
     { ratio: 0.97, title: '周转率4', value: '1231890' },
   ];
-  data.map(function(item, key) {
-    var ele =  $('.warehouse-state-list')
-    .eq(key);
-  //  var circleSize = $('.dashboard-progress').width()>$('.dashboard-progress').height()?$('.dashboard-progress').width() - 30:$('.dashboard-progress').height() - 30
-    ele.find('.dashboard-progress')
-      .circleProgress({
-        value: item.ratio,
-        size: $('.dashboard-progress').height()*1,
-        lineCap: 'round',
-        fill: { color: '#2F59FF' },
-        thickness: ($('.dashboard-progress').width()) / 20,
-      });
-      var value = item.ratio * 1000 / 10;
-      
-      // .html(value+'%');
-      count.start(ele.find(".progress-ration").children('span'),{ 
-        time: 1000, 
-        num: Number(value), 
-        regulator: 100 })
 
-      
-      ele.find(".warehouse-state-text-title").html(item.title);
+  function action(){
+    currentData.map(function(item, key) {
+      var ele =  $('.warehouse-state-list')
+      .eq(key);
+    //  var circleSize = $('.dashboard-progress').width()>$('.dashboard-progress').height()?$('.dashboard-progress').width() - 30:$('.dashboard-progress').height() - 30
+      ele.find('.dashboard-progress')
+        .circleProgress({
+          value: item.ratio,
+          size: $('.dashboard-progress').height()*1,
+          lineCap: 'round',
+          fill: { color: '#2F59FF' },
+          thickness: ($('.dashboard-progress').width()) / 20,
+        });
+        var value = item.ratio * 1000 / 10;
+        
+        // .html(value+'%');
+        count.start(ele.find(".progress-ration").children('span'),{ 
+          time: 1000, 
+          num: Number(value), 
+          regulator: 100 })
+  
+        
+        ele.find(".warehouse-state-text-title").html(item.title);
+  
+        count.start(ele.find(".warehouse-state-text-value"),{ 
+          time: 3000, 
+          num: Number(item.value), 
+          regulator: 100 })
+        // .html(item.value);
+    });
+  }
+  action();
+  // $(window).resize(function(){
+  //   action()
+  // })
 
-      count.start(ele.find(".warehouse-state-text-value"),{ 
-        time: 3000, 
-        num: Number(item.value), 
-        regulator: 100 })
-      // .html(item.value);
-  });
-
-});
+})
 
 //仓库使用率
 $(function(){
+
+
   var value = '80%';
 	$("#warehouse-ration-svg").find(".change-point").attr({
 		offset:value//图形百分比
@@ -175,7 +194,7 @@ $(function(){
 })
 
 //地图
-$(function() {
+$(function(){
   var mapData = [
       [{name: '上海'}, {name: '新疆', value: 20,rank:1}],
       [{name: '上海'}, {name: '甘肃', value: 10,rank:1}],
@@ -194,10 +213,12 @@ $(function() {
 
 
   chinaMap.init($('#map-container'), mapData);
-});
-
+  // $(window).resize(function(){
+  //   chinaMap.init($('#map-container'), mapData);
+  // })
+})
 //库存产品占比
-$(function() {
+$(function(){
   var goodData = [
     { value: 335, name: '直接访问' },
     { value: 310, name: '邮件营销' },
@@ -207,11 +228,13 @@ $(function() {
   ];
 
   warehouseGood.init($('#warehouse-good'), goodData);
+// $(window).resize(function(){
+//   warehouseGood.init($('#warehouse-good'), goodData);
+// })
 });
-
 //员工操作
-$(function() {
-  var data = [
+$(function(){
+  var stuffdata = [
     {
       rank: 1,
       operation: '入库',
@@ -293,15 +316,18 @@ $(function() {
       time: '2019-08-09 12:00:00',
     },
   ];
-  staffOperation.init($('#current-state'), data);
+  staffOperation.init($('#current-state'), stuffdata);
 
   // $("#current-state").find('tbody').scrollTo(100,500);
+// $(window).resize(function(){
+//   staffOperation.init($('#current-state'), stuffdata);
+// })
 });
-
 //出入库统计
-$(function() {
+
   //
-  var delayTime = 150000;
+$(function(){
+  var delayTime1 = 150000;
 
   function yearData() {
     //近一年数据
@@ -323,7 +349,7 @@ $(function() {
       .find('.panel-header-button')
       .eq(1)
       .addClass('active');
-    setTimeout(pre, delayTime);
+    setTimeout(pre, delayTime1);
   }
   function pre() {
     yearData();
@@ -335,9 +361,9 @@ $(function() {
       .find('.panel-header-button')
       .eq(0)
       .addClass('active');
-    setTimeout(next, delayTime);
+    setTimeout(next, delayTime1);
   }
-  next();
+
 
   //按钮点击切换逻辑
   $('.statistics-chart')
@@ -353,18 +379,26 @@ $(function() {
         monthData();
       }
     });
-});
+    next();
+    // $(window).resize(function(){
+    //   next();
+    // })
 
+  });
 //库存数
-$(function() {
-  var data = [{ name: '成品', data: data1 }, { name: '促销品', data: data2 }];
-  warehouseValue.init($('#warehouse-value'), xAxisData, data);
-});
+$(function(){
 
+
+  var saveData = [{ name: '成品', data: data1 }, { name: '促销品', data: data2 }];
+  warehouseValue.init($('#warehouse-value'), xAxisData, saveData);
+// $(window).resize(function(){
+//   warehouseValue.init($('#warehouse-value'), xAxisData, saveData);
+// })
+});
 //商品出库排名
-$(function() {
+$(function(){
   //假数据 - 当月
-  var data = [
+  var rankdata = [
     { name: '三生花金盏...', value: 709488, rank: 1 },
     { name: '三生花山茶...', value: 665280, rank: 2 },
     { name: '百雀羚IFSC...', value: 464280, rank: 3 },
@@ -372,7 +406,7 @@ $(function() {
     { name: '三生花金盏...', value: 709488, rank: 5 },
   ];
   //假数据 - 当年
-  var data1 = [
+  var rankdatadata1 = [
     { name: '三生花金盏123123123', value: 12488, rank: 1 },
     { name: '三生花山茶123123123', value: 621280, rank: 2 },
     { name: '百雀羚IFSC123123123', value: 214280, rank: 3 },
@@ -383,11 +417,11 @@ $(function() {
 
   //当月数据显示
   function monthData() {
-    goodRank.init($('#warehouse-good-rank'), data);
+    goodRank.init($('#warehouse-good-rank'), rankdata);
   }
   //当年数据显示
   function yearData() {
-    goodRank.init($('#warehouse-good-rank'), data1);
+    goodRank.init($('#warehouse-good-rank'), rankdatadata1);
   }
   //间隔时间
   var delayTime = 15000;
@@ -418,7 +452,7 @@ $(function() {
       .addClass('active');
     setTimeout(next, delayTime);
   }
-  next();
+ 
 
   $('#warehouse-good-rank-container')
     .find('.panel-header-button')
@@ -436,4 +470,9 @@ $(function() {
       }
     });
   // .animate({scrollTop: '300px'}, 8000).animate({scrollTop: '0px'}, 8000)
-});
+  next();
+  // $(window).resize(function(){
+
+  //   next();
+  // })
+})

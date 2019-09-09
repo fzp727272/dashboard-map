@@ -42,8 +42,8 @@ module.exports = {
       initial = t;
   
       var show = comdify(initial);
-      console.log(show)
-      $this.innerHTML = show;
+      // console.log(show)
+      ele.html(show) ;
     }, 30);
   },
 };

@@ -26,10 +26,13 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        font-size: $fontSizeNormal /2;
+        font-size: $fontSizeNormal;
         background: rgba(47,89,255,0.3);
         color: rgba(47,89,255,1);
         margin-right: $paddingSize ;
+        .fa{
+          font-size: 16px;
+        }
         .fa-reply{transform: scaleX(-1)}
         .fa-reply-all{transform: scaleX(-1)}
       }

@@ -5246,10 +5246,14 @@ body {
   -ms-flex-align: center;
       align-items: center;
   border-radius: 50%;
-  font-size: 0.375em;
+  font-size: 0.75em;
   background: rgba(47, 89, 255, 0.3);
   color: #2f59ff;
   margin-right: 0.75em;
+}
+
+#warehouse-statistics .statistics-container .statistics-list .tag .fa {
+  font-size: 16px;
 }
 
 #warehouse-statistics .statistics-container .statistics-list .tag .fa-reply {
